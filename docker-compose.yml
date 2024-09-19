@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  product_list:
+    build: product_list/.
+    command: ["sh", "-c", "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"]
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
