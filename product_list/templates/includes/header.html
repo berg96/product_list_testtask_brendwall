@@ -1,0 +1,21 @@
+<header>
+  <nav class="navbar shadow-sm">
+    <div class="container">
+      {% with request.resolver_match.view_name as view_name %}
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'products:create' %} active {% endif %}"
+              href="{% url 'products:create' %}">
+              Добавить продукт
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if view_name == 'products:list' %} active {% endif %}" href="{% url 'products:list' %}">
+              Список всех продуктов
+            </a>
+          </li>
+        </ul>
+      {% endwith %}
+    </div>
+  </nav>
+</header>
